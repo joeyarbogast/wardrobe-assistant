@@ -1,0 +1,27 @@
+# Personal wardrobe data - never commit
+data/wardrobe/*.json
+data/recommendations/*.json
+data/feedback/*.json
+
+# Keep template files
+!data/wardrobe/*.template.json
+!data/recommendations/*.template.json
+!data/feedback/*.template.json
+
+# Keep .gitkeep files to preserve directory structure
+!**/.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log

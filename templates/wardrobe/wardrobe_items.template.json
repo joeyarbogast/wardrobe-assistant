@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "id": "item_20251004_001",
+      "name": "Navy Warp Tech Heathered Commute Shorts",
+      "brand": "01Algo",
+      "type": "bottoms",
+      "category": "shorts",
+
+      "metadata": {
+        "colors": {
+          "primary": "navy blue",
+          "secondary": ["heathered gray"],
+          "accent": []
+        },
+        "patterns": ["solid", "heathered"],
+        "material": "performance tech fabric",
+        "fit": "modern fit",
+        "formality": 4,
+        "style": ["casual", "athletic", "versatile"]
+      },
+
+      "context": {
+        "seasons": ["spring", "summer"],
+        "weather": {
+          "tempRange": {
+            "min": 65,
+            "max": 90,
+            "unit": "fahrenheit"
+          },
+          "conditions": ["clear", "cloudy"]
+        },
+        "occasions": ["casual", "weekend", "active", "errands"],
+        "timeOfDay": ["morning", "afternoon", "evening"]
+      },
+
+      "tracking": {
+        "dateAdded": "2025-10-04T00:00:00Z",
+        "lastWorn": null,
+        "wearCount": 0,
+        "lastUpdated": "2025-10-04T00:00:00Z"
+      },
+
+      "imagePath": "images/item_20251004_001.jpg",
+      "notes": "9-inch inseam. Performance fabric with stretch. Good for active casual wear.",
+      "tags": ["performance", "stretch", "casual"],
+
+      "aiAnalysis": {
+        "analyzedDate": "2025-10-04T00:00:00Z",
+        "confidenceScore": 0.95,
+        "detectedFeatures": [
+          "Performance tech fabric",
+          "Heathered navy color",
+          "Side pockets",
+          "9-inch inseam",
+          "Modern athletic fit"
+        ],
+        "stylingNotes": "Versatile casual shorts that work for active days or relaxed weekends. Pair with polo shirts or casual tees."
+      }
+    },
+    {
+      "id": "item_20251004_002",
+      "name": "Blue Dynamic Hybrid Shorts",
+      "brand": "7 Diamonds",
+      "type": "bottoms",
+      "category": "shorts",
+
+      "metadata": {
+        "colors": {
+          "primary": "gray blue",
+          "secondary": [],
+          "accent": []
+        },
+        "patterns": ["solid"],
+        "material": "hybrid performance fabric",
+        "fit": "modern fit",
+        "formality": 4,
+        "style": ["casual", "versatile"]
+      },
+
+      "context": {
+        "seasons": ["spring", "summer"],
+        "weather": {
+          "tempRange": {
+            "min": 65,
+            "max": 90,
+            "unit": "fahrenheit"
+          },
+          "conditions": ["clear", "cloudy"]
+        },
+        "occasions": ["casual", "weekend", "errands", "outdoor activities"],
+        "timeOfDay": ["morning", "afternoon", "evening"]
+      },
+
+      "tracking": {
+        "dateAdded": "2025-10-04T00:00:00Z",
+        "lastWorn": null,
+        "wearCount": 0,
+        "lastUpdated": "2025-10-04T00:00:00Z"
+      },
+
+      "imagePath": "images/item_20251004_002.jpg",
+      "notes": "Hybrid fabric suitable for multiple activities. Comfortable casual shorts.",
+      "tags": ["hybrid", "versatile", "casual"],
+
+      "aiAnalysis": {
+        "analyzedDate": "2025-10-04T00:00:00Z",
+        "confidenceScore": 0.92,
+        "detectedFeatures": [
+          "Hybrid performance fabric",
+          "Gray-blue color",
+          "Zipper pockets",
+          "Modern fit",
+          "Casual styling"
+        ],
+        "stylingNotes": "Easy-wearing casual shorts that transition well from active pursuits to relaxed social settings."
+      }
+    }
+  ],
+  "_schema": {
+    "description": "Complete wardrobe item details. This file contains all metadata for every item. Use wardrobe_index.json to filter first, then fetch specific items from this file.",
+    "workflow": {
+      "1_filter": "Load wardrobe_index.json and filter by criteria (type, color, season, formality, tags)",
+      "2_fetch": "Get item IDs from filtered results",
+      "3_load": "Load full details for those specific items from this file",
+      "4_recommend": "Use complete metadata to make styling recommendations"
+    },
+    "benefits": {
+      "efficiency": "Avoid loading 50KB+ of data when you only need to find 'blue shirts for summer'",
+      "scalability": "Index stays small (~100-200 bytes/item) even with 500+ items. Only load full details when needed.",
+      "context_management": "Keep Claude's context focused on relevant items rather than entire wardrobe"
+    }
+  }
+}

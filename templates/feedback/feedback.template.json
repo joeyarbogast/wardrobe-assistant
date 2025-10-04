@@ -1,0 +1,110 @@
+{
+  "id": "feedback_20251004_001",
+  "recommendationId": "rec_20251004_001",
+  "timestamp": "2025-10-04T17:00:00Z",
+
+  "worn": true,
+  "woreExactly": false,
+
+  "actualOutfit": {
+    "itemsWorn": [
+      "item_20251004_001",
+      "item_20251004_002",
+      "item_20251004_003",
+      "item_20251004_004",
+      "item_20251004_005"
+    ],
+    "modifications": [],
+    "addedItems": [],
+    "removedItems": []
+  },
+
+  "ratings": {
+    "overall": 9,
+    "comfort": 8,
+    "appropriateness": 10,
+    "confidence": 9,
+    "compliments": 2,
+    "wouldWearAgain": true
+  },
+
+  "experience": {
+    "whatWorked": [
+      "Formality level was perfect for the client meeting",
+      "Navy blazer made me feel confident and professional",
+      "Color coordination was sophisticated without being boring",
+      "Outfit was comfortable for the full 3-hour meeting"
+    ],
+
+    "whatDidnt": [
+      "Blazer felt slightly warm in the conference room",
+      "Could have used a pocket square for extra polish"
+    ],
+
+    "surprises": [
+      "Client complimented the burgundy belt - great subtle detail",
+      "Felt more confident than usual presenting"
+    ],
+
+    "improvements": [
+      "Next time consider lighter weight blazer for climate-controlled rooms",
+      "Add pocket square to accessories for this formality level"
+    ]
+  },
+
+  "context": {
+    "actualWeather": {
+      "temperature": 67,
+      "conditions": "sunny",
+      "different": "Warmer and sunnier than predicted"
+    },
+    "actualOccasion": {
+      "asExpected": true,
+      "notes": "Client was also dressed formally, good match"
+    },
+    "duration": "3.5 hours",
+    "activities": ["sitting", "standing presentation", "walking to lunch"]
+  },
+
+  "learning": {
+    "colorInsights": [
+      "Navy + charcoal + burgundy is a winning combination",
+      "White shirt provides excellent contrast without being stark"
+    ],
+    "fitInsights": [
+      "Tailored fit blazer allows movement during presentations",
+      "Dress pants were comfortable for extended sitting"
+    ],
+    "occasionInsights": [
+      "This formality level (8.5) is perfect for conservative client meetings",
+      "Professional appearance positively impacts confidence"
+    ],
+    "itemPerformance": {
+      "item_20251004_001": {
+        "performance": "excellent",
+        "notes": "Blazer is a wardrobe MVP for business settings"
+      },
+      "item_20251004_004": {
+        "performance": "excellent",
+        "notes": "Burgundy belt adds perfect subtle detail"
+      }
+    }
+  },
+
+  "futurePreferences": {
+    "repeatThisCombination": true,
+    "similarOccasions": ["client meetings", "formal presentations", "interviews"],
+    "adjustments": [
+      "Consider lighter fabric blazer for warm indoor settings",
+      "Add pocket square accessory"
+    ],
+    "avoidances": []
+  },
+
+  "metadata": {
+    "feedbackCompleteness": "detailed",
+    "timeToComplete": "5 minutes",
+    "photosAttached": false,
+    "notes": "Great recommendation overall. Very helpful for building confidence in professional settings."
+  }
+}

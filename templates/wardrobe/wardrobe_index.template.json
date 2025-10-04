@@ -1,0 +1,38 @@
+{
+  "index": [
+    {
+      "id": "item_20251004_001",
+      "name": "Navy Warp Tech Heathered Commute Shorts",
+      "type": "bottoms",
+      "category": "shorts",
+      "primaryColor": "navy blue",
+      "formality": 4,
+      "seasons": ["spring", "summer"],
+      "tags": ["performance", "stretch", "casual"]
+    },
+    {
+      "id": "item_20251004_002",
+      "name": "Blue Dynamic Hybrid Shorts",
+      "type": "bottoms",
+      "category": "shorts",
+      "primaryColor": "gray blue",
+      "formality": 4,
+      "seasons": ["spring", "summer"],
+      "tags": ["hybrid", "versatile", "casual"]
+    }
+  ],
+  "_schema": {
+    "description": "Lightweight index for quick wardrobe filtering. Load this first to find relevant items, then load full details from wardrobe_items.json",
+    "fields": {
+      "id": "Unique identifier matching the full item record",
+      "name": "Display name of the item",
+      "type": "Category: tops, bottoms, outerwear, shoes, accessories",
+      "category": "Subcategory: shirt, pants, jacket, etc.",
+      "primaryColor": "Main color for quick filtering",
+      "formality": "1-10 scale (1=very casual, 10=very formal)",
+      "seasons": "Array of applicable seasons: spring, summer, fall, winter",
+      "tags": "Quick reference tags for filtering and search"
+    },
+    "usage": "Filter by type, color, formality, season, or tags to get relevant item IDs. Then fetch full details for those items from wardrobe_items.json"
+  }
+}

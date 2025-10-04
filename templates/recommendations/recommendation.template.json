@@ -1,0 +1,126 @@
+{
+  "id": "rec_20251004_001",
+  "timestamp": "2025-10-04T09:30:00Z",
+
+  "context": {
+    "occasion": "business meeting",
+    "weather": {
+      "temperature": 65,
+      "unit": "fahrenheit",
+      "conditions": "partly cloudy",
+      "precipitation": 0
+    },
+    "season": "fall",
+    "timeOfDay": "morning",
+    "mood": "confident and professional",
+    "duration": "3 hours",
+    "additionalNotes": "Client presentation, conservative industry"
+  },
+
+  "outfit": {
+    "items": [
+      {
+        "id": "item_20251004_001",
+        "name": "Navy Blue Blazer",
+        "type": "outerwear",
+        "category": "jacket",
+        "role": "primary layer",
+        "reason": "Professional formality level (8) matches business meeting. Navy is authoritative and versatile."
+      },
+      {
+        "id": "item_20251004_002",
+        "name": "White Dress Shirt",
+        "type": "top",
+        "category": "shirt",
+        "role": "base layer",
+        "reason": "Classic pairing with navy blazer. Crisp white conveys professionalism and attention to detail."
+      },
+      {
+        "id": "item_20251004_003",
+        "name": "Charcoal Dress Pants",
+        "type": "bottom",
+        "category": "pants",
+        "role": "base",
+        "reason": "Neutral charcoal complements navy without competing. Professional silhouette."
+      },
+      {
+        "id": "item_20251004_004",
+        "name": "Burgundy Leather Belt",
+        "type": "accessory",
+        "category": "belt",
+        "role": "accent",
+        "reason": "Adds subtle color interest. Leather quality signals attention to detail."
+      },
+      {
+        "id": "item_20251004_005",
+        "name": "Black Oxford Shoes",
+        "type": "footwear",
+        "category": "dress shoes",
+        "role": "foundation",
+        "reason": "Classic business formal footwear. Works with charcoal and navy."
+      }
+    ],
+
+    "totalFormality": 8.5,
+    "dominantColors": ["navy", "charcoal", "white"],
+    "accentColors": ["burgundy", "black"]
+  },
+
+  "reasoning": {
+    "overall": "This outfit strikes the perfect balance of professional authority and approachability for a client-facing business meeting. The classic navy blazer and white shirt combination is timeless and universally appropriate in conservative business settings.",
+
+    "formalityMatch": "Target formality: 8-9 (business formal). Achieved: 8.5. The combination is appropriately formal without being stuffy.",
+
+    "colorCoordination": "Navy and charcoal create a sophisticated, complementary neutral base. White provides contrast and crispness. Burgundy belt adds a subtle touch of warmth without being distracting.",
+
+    "weatherAppropriateness": "Perfect for 65°F partly cloudy conditions. Blazer provides light warmth for indoor AC and outdoor comfort. Wool blend breathes well.",
+
+    "occasionFit": "Ideal for client presentations. Conservative enough for traditional industries, polished enough to convey competence and professionalism.",
+
+    "styleNotes": [
+      "Keep blazer buttoned when standing, unbuttoned when seated",
+      "Ensure shirt cuffs extend slightly beyond blazer sleeves",
+      "Belt should match shoe leather tone",
+      "Consider pocket square for added polish (optional)"
+    ]
+  },
+
+  "alternatives": {
+    "variations": [
+      {
+        "type": "color variation",
+        "description": "Swap white shirt for light blue dress shirt",
+        "reason": "Slightly less formal but equally professional. Adds subtle color interest.",
+        "formalityChange": -0.5
+      },
+      {
+        "type": "pattern variation",
+        "description": "Add subtle striped or patterned tie",
+        "reason": "Enhances visual interest. Choose burgundy or navy tones to complement existing palette.",
+        "formalityChange": 0
+      },
+      {
+        "type": "seasonal adjustment",
+        "description": "If temperature drops, add charcoal overcoat",
+        "reason": "Maintains professional appearance while adding warmth",
+        "formalityChange": +0.5
+      }
+    ],
+
+    "ifNotWearing": {
+      "item_20251004_001": {
+        "alternative": "item_20251004_010",
+        "name": "Charcoal Suit Jacket",
+        "reason": "Maintains formality and professional tone with different color palette"
+      }
+    }
+  },
+
+  "metadata": {
+    "generatedBy": "style-expert-agent",
+    "modelVersion": "v1.0",
+    "confidenceScore": 0.92,
+    "basedOnFeedback": [],
+    "wardrobeCoverage": "5 of 45 items used (11%)"
+  }
+}

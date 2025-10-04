@@ -1,0 +1,57 @@
+{
+  "id": "item_20251004_001",
+  "name": "Navy Blue Blazer",
+  "brand": "J.Crew",
+  "type": "outerwear",
+  "category": "jacket",
+
+  "metadata": {
+    "colors": {
+      "primary": "navy blue",
+      "secondary": [],
+      "accent": []
+    },
+    "patterns": ["solid"],
+    "material": "wool blend",
+    "fit": "tailored",
+    "formality": 8,
+    "style": ["classic", "professional", "versatile"]
+  },
+
+  "context": {
+    "seasons": ["fall", "winter", "spring"],
+    "weather": {
+      "tempRange": {
+        "min": 50,
+        "max": 75,
+        "unit": "fahrenheit"
+      },
+      "conditions": ["clear", "cloudy", "light rain"]
+    },
+    "occasions": ["work", "business meeting", "formal event", "dinner out", "interview"],
+    "timeOfDay": ["morning", "afternoon", "evening"]
+  },
+
+  "tracking": {
+    "dateAdded": "2025-10-04T00:00:00Z",
+    "lastWorn": null,
+    "wearCount": 0,
+    "lastUpdated": "2025-10-04T00:00:00Z"
+  },
+
+  "imagePath": "images/item_20251004_001.jpg",
+  "notes": "Dry clean only. Pairs well with dress shirts and chinos.",
+  "tags": ["professional", "wardrobe-staple", "versatile"],
+
+  "aiAnalysis": {
+    "analyzedDate": "2025-10-04T00:00:00Z",
+    "confidenceScore": 0.95,
+    "detectedFeatures": [
+      "Two-button closure",
+      "Notch lapels",
+      "Single-breasted",
+      "Structured shoulders"
+    ],
+    "stylingNotes": "Classic professional piece. Works as business formal or smart casual. Layer over dress shirts or turtlenecks."
+  }
+}
