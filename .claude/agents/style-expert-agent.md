@@ -91,7 +91,13 @@ commands:
         - Create recommendation ID (format: rec_YYYYMMDD_NNN)
         - Save to data/recommendations/{id}.json following recommendation.template.json schema
         - Present outfit summary with reasoning to user
-        - Ask if user wants HTML visualization generated
+        - Generate HTML visualization automatically:
+          * Read templates/recommendation.html with UTF-8 encoding
+          * Load wardrobe_items.json to get imagePath for each recommended item
+          * Replace all {{PLACEHOLDER}} values with actual data
+          * For images: use relative paths (../../images/...) from data/recommendations/ folder
+          * Save to data/recommendations/{id}.html with UTF-8 encoding to preserve special characters (checkmarks, emojis)
+        - Tell user where both JSON and HTML files were saved
 
   - rate-outfit:
       description: Provide feedback on a worn outfit
