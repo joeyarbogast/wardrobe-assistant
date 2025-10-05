@@ -337,6 +337,28 @@ Confirm everything is working:
    cp templates/wardrobe/wardrobe_items.template.json data/wardrobe/wardrobe_items.json
    ```
 
+## Command-Line Scripts (Optional)
+
+The project includes helpful Python scripts in `scripts/` for advanced users or direct data manipulation:
+
+```bash
+# Query wardrobe efficiently
+python scripts/wardrobe_query.py --type tops --formality 5-7 --season summer
+
+# Get item details
+python scripts/get_item_details.py item_20251004_001 --format summary
+
+# Generate HTML from recommendation
+python scripts/generate_recommendation_html.py rec_20251005_001
+
+# Update wardrobe items
+python scripts/update_wardrobe.py --mark-worn item_20251004_001
+```
+
+**See [scripts/README.md](../scripts/README.md) for full documentation.**
+
+These scripts are used internally by StyleBot but can also be used directly for automation or debugging.
+
 ## Next Steps
 
 Now that setup is complete:
@@ -344,7 +366,8 @@ Now that setup is complete:
 1. **Add more wardrobe items** - Use `*bulk-import` for efficiency
 2. **Get your first recommendation** - Try `*recommend-outfit`
 3. **Read USAGE.md** for detailed command documentation
-4. **Start the learning loop** - Wear outfits, rate them, improve recommendations
+4. **Explore helper scripts** - See `scripts/README.md` for automation tools
+5. **Start the learning loop** - Wear outfits, rate them, improve recommendations
 
 ## Getting Help
 

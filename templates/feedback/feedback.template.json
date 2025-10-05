@@ -101,10 +101,15 @@
     "avoidances": []
   },
 
+  "photos": {
+    "hasPhotos": false,
+    "photoDirectory": null,
+    "photos": []
+  },
+
   "metadata": {
     "feedbackCompleteness": "detailed",
     "timeToComplete": "5 minutes",
-    "photosAttached": false,
     "notes": "Great recommendation overall. Very helpful for building confidence in professional settings."
   }
 }
