@@ -86,14 +86,21 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 ### Architecture
 
-StyleBot uses an efficient **index-based architecture** that scales to hundreds of wardrobe items:
+StyleBot uses an efficient **index-based architecture** with **helper scripts** that scale to hundreds of wardrobe items:
 
 - **Wardrobe Index** (~100 bytes/item) - Quick filtering by color, type, season, formality
 - **Wardrobe Items** (~1.5KB/item) - Full metadata loaded only when needed
+- **Helper Scripts** (Python) - Fast querying, HTML generation, and data updates
 - **Recommendations** (JSON + HTML) - Structured data + visual previews
 - **Feedback** (JSON) - Ratings and learning data
 
-This means even with 500 wardrobe items, StyleBot only loads ~20-40KB for most queries instead of 750KB.
+**Helper scripts in `scripts/` provide:**
+- `wardrobe_query.py` - Fast filtering without loading full wardrobe
+- `get_item_details.py` - Fetch specific items by ID
+- `generate_recommendation_html.py` - Create beautiful outfit visualizations
+- `update_wardrobe.py` - Programmatic item updates and tracking
+
+This means even with 500 wardrobe items, StyleBot only loads ~20-40KB for most queries instead of 750KB. See [scripts/README.md](scripts/README.md) for details.
 
 ## Usage Examples
 

@@ -103,7 +103,7 @@
         "type": "seasonal adjustment",
         "description": "If temperature drops, add charcoal overcoat",
         "reason": "Maintains professional appearance while adding warmth",
-        "formalityChange": +0.5
+        "formalityChange": 0.5
       }
     ],
 

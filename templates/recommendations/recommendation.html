@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Recommendation - {{OCCASION_TITLE}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .rec-id {
+            font-size: 0.9em;
+            opacity: 0.7;
+            font-family: monospace;
+        }
+
+        .context-bar {
+            background: #f7fafc;
+            padding: 20px 40px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .context-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .context-item .icon {
+            font-size: 1.2em;
+        }
+
+        .context-item .label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .outfit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .item-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .item-card.optional {
+            border-style: dashed;
+        }
+
+        .item-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .item-badge.optional {
+            background: #ed8936;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 200px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .item-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .item-icon {
+            font-size: 4em;
+            opacity: 0.3;
+        }
+
+        .item-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .item-meta {
+            font-size: 0.85em;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .item-reason {
+            font-size: 0.9em;
+            color: #4a5568;
+            line-height: 1.5;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reasoning-box {
+            background: #edf2f7;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .reasoning-box h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .reasoning-box p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .style-notes {
+            list-style: none;
+            padding: 0;
+        }
+
+        .style-notes li {
+            padding: 10px;
+            background: white;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            color: #4a5568;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .style-notes li:before {
+            content: "✓";
+            position: absolute;
+            left: 10px;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .alternatives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .alt-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .alt-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .alt-card p {
+            color: #4a5568;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .color-name {
+            font-size: 0.8em;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .item-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{HEADER_ICON}} {{OCCASION_TITLE}}</h1>
+            <p class="rec-id">{{RECOMMENDATION_ID}}</p>
+        </div>
+
+        <div class="context-bar">
+            {{CONTEXT_ITEMS}}
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">👔 The Outfit</h2>
+                <div class="outfit-grid">
+                    {{OUTFIT_ITEMS}}
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat">
+                        <div class="stat-value">{{FORMALITY_LEVEL}}</div>
+                        <div class="stat-label">Formality Level</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">{{CONFIDENCE_SCORE}}%</div>
+                        <div class="stat-label">Confidence Score</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">{{ITEMS_COUNT}}</div>
+                        <div class="stat-label">Items Used</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🎨 Color Palette</h2>
+                <div class="reasoning-box">
+                    <div class="color-palette">
+                        {{COLOR_SWATCHES}}
+                    </div>
+                    <p style="margin-top: 20px;"><strong>Color Strategy:</strong> {{COLOR_STRATEGY}}</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">💡 Why This Works</h2>
+                <div class="reasoning-box">
+                    <h3>Overall Assessment</h3>
+                    <p>{{OVERALL_REASONING}}</p>
+
+                    <h3>Formality Match</h3>
+                    <p>{{FORMALITY_REASONING}}</p>
+
+                    <h3>Weather Appropriateness</h3>
+                    <p>{{WEATHER_REASONING}}</p>
+
+                    <h3>Occasion Fit</h3>
+                    <p>{{OCCASION_REASONING}}</p>
+
+                    <h3>Style Notes</h3>
+                    <ul class="style-notes">
+                        {{STYLE_NOTES}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🔄 Alternative Options</h2>
+                <div class="alternatives">
+                    {{ALTERNATIVES}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
